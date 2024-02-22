@@ -11,7 +11,7 @@ namespace SQLi_1
     {
         static void Main(string[] args)
         {
-/*             try
+             try
             {
                 var user = args[0];
                 var pwd = Encrypt(args[1]);
@@ -21,18 +21,18 @@ namespace SQLi_1
             {
 
                 Console.WriteLine("An error has occurred !!");
-            } */
+            } 
 			
 			Console.WriteLine("An error has occurred !!");
             
         }
 
-      /*   private static  string Encrypt(string plain)
+         private static  string Encrypt(string plain)
         {
             return plain;
-        } */
+        } 
 
- /*        private static void Login(string username,string password)
+         private static void Login(string username,string password)
         {
              try
             {
@@ -52,6 +52,6 @@ namespace SQLi_1
 
                 Console.WriteLine("An error has occurred !!");
             } 
-        } */
+        } 
     }
 }
