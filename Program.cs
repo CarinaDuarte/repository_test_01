@@ -16,6 +16,7 @@ namespace SQLi_1
                 var user = args[0];
                 var pwd = Encrypt(args[1]);
                 Login(user, pwd);
+		Login1(user, pwd);
             }
             catch  
             {
@@ -23,7 +24,7 @@ namespace SQLi_1
                 Console.WriteLine("An error has occurred !!");
             } 
 			
-			Console.WriteLine("An error has occurred !!");
+		Console.WriteLine("An error has occurred !!");
             
         }
 
@@ -53,5 +54,27 @@ namespace SQLi_1
                 Console.WriteLine("An error has occurred !!");
             } 
         } 
+
+         private static void Login1(string username,string password)
+        {
+             try
+            {
+                using (var conn = new SqlConnection("conn..."))
+                {
+                    var sql = "SELECT * FROM Users WHERE username = '" + username + "' AND pwd = '" + password + "'";
+                    using (var cmd = new SqlCommand(sql))
+                    {
+                        cmd.Connection = conn;
+                        cmd.ExecuteScalar();
+                    }
+
+                }
+            }
+            catch  
+            {
+
+                Console.WriteLine("An error has occurred !!");
+            } 
+        } 	    
     }
 }
